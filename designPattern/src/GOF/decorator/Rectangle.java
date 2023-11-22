@@ -9,9 +9,15 @@ package GOF.decorator;
  * @author Bilal computer
  */
 public class Rectangle implements Shape {
+   private double price = 10.0; // Price for the rectangle
 
    @Override
    public void draw() {
       System.out.println("Shape: Rectangle");
+   }
+
+   @Override
+   public double getPrice() {
+      return price;
    }
 }

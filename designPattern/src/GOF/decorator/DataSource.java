@@ -8,16 +8,8 @@ package GOF.decorator;
  *
  * @author Bilal computer
  */
-public class Circle implements Shape {
-   private final double price = 7.0; // Price for the circle
+public interface DataSource {
+    void writeData(String data);
 
-   @Override
-   public void draw() {
-      System.out.println("Shape: Circle");
-   }
-
-   @Override
-   public double getPrice() {
-      return price;
-   }
+    String readData();
 }
