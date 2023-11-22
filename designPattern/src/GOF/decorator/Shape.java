@@ -8,6 +8,6 @@ package GOF.decorator;
  *
  * @author Bilal computer
  */
-public class ddd {
-    
+public interface Shape {
+   void draw();
 }
