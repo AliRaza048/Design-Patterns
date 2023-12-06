@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ProxyPattern;
+package ProxyPattern.VirtualandProtectedProxyforExamSystem;
 
 /**
  *
@@ -17,17 +17,10 @@ public class ExamProxy implements Exam {
     }
 
     @Override
-    public void loadExam() {
+    public void loadContent() {
         if (realExam == null) {
             realExam = new RealExam(examContent);
         }
-    }
-    @Override
-    public void submitAnswer(String studentId, String answer) {
-        if (realExam == null) {
-            loadExam(); // Ensure the real exam is loaded
-        }
-        realExam.submitAnswer(studentId, answer);
     }
 
     @Override
@@ -38,4 +31,12 @@ public class ExamProxy implements Exam {
             realExam.displayResults(user);
         }
     }
+
+    public void submitAnswer(String studentId, String answer) {
+        if (realExam == null) {
+            loadContent(); // Ensure the real exam is loaded
+        }
+        realExam.submitAnswer(studentId, answer);
+    }
 }
+
